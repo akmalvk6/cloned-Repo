@@ -1,0 +1,118 @@
+/* Main Header Style */
+.header {
+  background: linear-gradient(135deg, #ffffff, #f0f8ff); /* Light gradient background */
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Centering the content in the toolbar */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Flexbox Layout for Header */
+.header-content {
+  display: flex;
+  justify-content: space-between; /* Ensures logo and profile button are on opposite sides */
+  align-items: center;
+  flex-wrap: nowrap; /* Prevents wrapping of items */
+}
+
+/* Logo Section (Left side) */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px; /* Adjust logo size */
+  height: auto;
+  margin-right: 10px; /* Spacing between logo and text */
+}
+
+/* Navbar (Center menu) */
+.navbar {
+  display: flex;
+  justify-content: center; /* Center align the navigation items */
+  flex-grow: 1; /* Take available space between logo and profile */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li {
+  margin: 0 20px;
+}
+
+.nav-list li a {
+  color: #333;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Navbar link hover effect */
+.nav-list li a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Profile button (Right side) */
+.profile-btn {
+  display: flex;
+  justify-content: flex-end; /* Align the profile icon to the right */
+}
+
+.profile-btn button {
+  color: #333;
+  font-size: 30px; /* Larger profile icon */
+  transition: color 0.3s ease;
+}
+
+/* Profile button hover effect */
+.profile-btn button:hover {
+  color: #ffcc00; /* Bright color on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 24px;
+  }
+
+  /* Stack the elements vertically on small screens */
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    justify-content: center; /* Center the navbar links on mobile */
+    width: 100%;
+  }
+
+  .nav-list {
+    display: none; /* Hide navbar on mobile by default */
+    width: 100%;
+    background-color: #007bff;
+    position: absolute;
+    top: 60px; /* Below the toolbar */
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+}

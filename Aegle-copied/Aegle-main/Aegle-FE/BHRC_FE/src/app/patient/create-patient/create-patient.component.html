@@ -1,0 +1,38 @@
+
+<h3>Add Patient</h3>
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="patientFirstName">First Name:</label>
+      <input id="patientFirstName" [(ngModel)]="patient.patientFirstName" name="patientFirstName" required />
+    </div>
+    <div>
+      <label for="patientLastName">Last Name:</label>
+      <input id="patientLastName" [(ngModel)]="patient.patientLastName" name="patientLastName" required />
+    </div>
+    <div>
+      <label for="patientAge">Age:</label>
+      <input id="patientAge" [(ngModel)]="patient.patientAge" name="patientAge" type="number" required />
+    </div>
+    <div>
+      <label for="patientBloodGroup">Blood Group:</label>
+      <input id="patientBloodGroup" [(ngModel)]="patient.patientBloodGroup" name="patientBloodGroup" required />
+    </div>
+    <div>
+      <label for="phoneNumber">Phone Number:</label>
+      <input id="phoneNumber" [(ngModel)]="patient.phoneNumber" name="phoneNumber" required />
+    </div>
+    <div>
+      <label for="patientEmail">Email:</label>
+      <input id="patientEmail" [(ngModel)]="patient.patientEmail" name="patientEmail" type="email" required />
+    </div>
+    <div>
+      <label for="patientAddress">Address:</label>
+      <textarea id="patientAddress" [(ngModel)]="patient.patientAddress" name="patientAddress" required></textarea>
+    </div>
+    <div>
+      <label for="pincode">Pincode:</label>
+      <input id="pincode" [(ngModel)]="patient.pincode" name="pincode" required />
+    </div>
+    <button type="submit" [disabled]="!isFormValid()">Submit</button>
+  </form>
+  

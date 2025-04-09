@@ -1,0 +1,62 @@
+<app-header></app-header>
+<div class="patient-list-container">
+  <!-- Header and Add New Patient Button -->
+  <div class="header-container">
+    <h1>Patients</h1>
+    <button class="action-button add-patient" (click)="addNewPatient()">
+      <i class="fa fa-user-plus"></i> Add New Patient
+    </button>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar-container">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search patients..." class="search-bar" />
+  </div>
+
+  <!-- Show error message if any -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Table to display patient data -->
+  <div *ngIf="patients.length > 0">
+    <table class="patient-table">
+      <thead>
+        <tr>
+          <th> Name</th>
+          <th>Age</th>
+          <th>Blood Group</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patient of patients | paginate: { id: 'patients', itemsPerPage: pageSize, currentPage: p, totalItems: totalItems }">
+          <td>{{ patient.patientFirstName }} {{ patient.patientLastName }}</td>
+          <td>{{ patient.patientAge }}</td>
+          <td>{{ patient.patientBloodGroup }}</td>
+          <td>{{ patient.phoneNumber }}</td>
+          <td>{{ patient.patientEmail }}</td>
+          <td>{{ patient.patientAddress }}</td>
+          <td class="action-buttons">
+            <!-- Edit Button (Icon) -->
+            <button class="action-button edit" (click)="editPatient(patient.patientId)">
+              <i class="fa fa-edit"></i>
+            </button>
+            <!-- Delete Button (Icon) -->
+            <button class="action-button delete" (click)="deletePatient(patient.patientId)">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Pagination Component -->
+    <pagination-controls (pageChange)="pageChange($event)" id="patients" [maxSize]="5"></pagination-controls>
+    <ng-template #noPatients>
+    <p class="no-patients-message">No patients found. Please add new patients.</p>
+  </ng-template>
+</div>

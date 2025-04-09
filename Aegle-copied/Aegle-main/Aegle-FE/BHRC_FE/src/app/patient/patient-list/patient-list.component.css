@@ -1,0 +1,151 @@
+/* Main Container */
+.patient-list-container {
+  margin: 30px;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Container: Align Add Button to the Right */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Add New Patient Button */
+.action-button.add-patient {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-button.add-patient i {
+  margin-right: 8px;
+}
+
+.action-button.add-patient:hover {
+  background-color: #0056b3;
+}
+
+/* Search Bar */
+.search-bar-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.search-bar {
+  width: 50%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar:focus {
+  border-color: #007bff;
+}
+
+/* Table Styles */
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.patient-table th, .patient-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.patient-table th {
+  background-color: #f2f2f2;
+}
+
+.patient-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Action Buttons (Edit, Delete) */
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;  /* Add space between buttons */
+}
+
+.action-button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.action-button:hover {
+  opacity: 0.8;
+}
+
+.action-button.edit {
+  color: #28a745; /* Green color for edit */
+}
+
+.action-button.delete {
+  color: #dc3545; /* Red color for delete */
+}
+
+/* Error Message */
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* No Patients Message */
+.no-patients-message {
+  color: #6c757d;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+/* Pagination Controls */
+pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Table Responsive */
+@media (max-width: 768px) {
+  .patient-table th, .patient-table td {
+    padding: 8px 10px;
+  }
+
+  .search-bar {
+    width: 80%;
+  }
+}
+pagination-controls {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+.pagination-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination-container .ngx-pagination {
+  display: inline-block;
+}
+
